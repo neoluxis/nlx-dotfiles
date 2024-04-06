@@ -1,5 +1,7 @@
 # Linux Configuration Dotfiles
 
+[中文](doc/zh_CN.md)
+
 ## Use Dotfiles
 
 ### 1. Use Auto Config Script

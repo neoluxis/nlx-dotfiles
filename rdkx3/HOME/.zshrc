@@ -70,13 +70,9 @@ ZSH_THEME="rkj-repos"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
+plugins=(git
+	zsh-syntax-highlighting
 	vi-mode
-	web-search
-	jsontools
-	zsh-syntax-highlighting 
-	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -97,10 +93,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-PATH=.:/sbin:$PATH
-PKG_CONFIG_PATH=$PKG_CONFIFG_PATH:/usr/local/lib/pkgconfig
-
-export PKG_CONFIG_PATH
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -114,3 +106,4 @@ export PKG_CONFIG_PATH
 source ~/dotfiles/00_public/zsh/aliases.zsh
 source ~/dotfiles/00_public/zsh/exports.zsh
 
+source /opt/tros/setup.zsh

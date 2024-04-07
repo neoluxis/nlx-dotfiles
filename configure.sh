@@ -1,1 +1,1 @@
-scripts/configure.sh
+/home/neolux/dotfiles/scripts/configure.sh

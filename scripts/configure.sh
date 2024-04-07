@@ -30,10 +30,10 @@ fi
 
 cd ${dotfiles_dir}
 if [ $(uname -a | grep -c "rdkx3") -gt 0 ]; then
-	{ git checkout rdkx3; dotfiles_dir=${dotfiles_dir}/rdkx3 } || 
+	{ git checkout rdkx3 -- ; dotfiles_dir=${dotfiles_dir}/rdkx3 } || 
 		{ echo Failed to checkout branch for RDKx3; exit 2; }
 elif [ $(uname -a | grep -c "rpi") -gt 0 ]; then
-	{ git checkout raspi; dotfiles_dir=${dotfiles_dir}/raspi5 }  || 
+	{ git checkout raspi -- ; dotfiles_dir=${dotfiles_dir}/raspi5 }  || 
 		{ echo Failed to checkout branch for raspi; exit 2; }
 else
 	echo Cannot detect system. Please configure dotfiles manually. 
@@ -60,7 +60,7 @@ for file in $(ls -a ${dotfiles_dir}/home); do
 		else
 			vim ${prefix}/${file}
 			echo -e -n "Delete it? [N/y] "
-			read -n 1
+			read
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
 				rm -fr ${prefix}/${file}
 				echo "Delete ${prefix}/${file}"
@@ -103,7 +103,7 @@ for file in $(ls -a ${dotfiles_dir}/config); do
 		else
 			vim ${prefix}/.config/${file}
 			echo -e -n "Delete it? [N/y] "
-			read -n 1
+			read 
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
 				rm -fr ${prefix}/.config/${file}
 				echo "Delete ${prefix}/.config/${file}"

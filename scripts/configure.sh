@@ -126,6 +126,6 @@ for file in $(ls -a ${dotfiles_dir}/config); do
 	fi
 done
 
-git checkout main
+# git checkout main
 
 echo Auto Configuration Successful!

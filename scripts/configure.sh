@@ -30,9 +30,11 @@ fi
 
 cd ${dotfiles_dir}
 if [ $(uname -a | grep -c "rdkx3") -gt 0 ]; then
-	git checkout rdkx3 || { echo Failed to checkout branch for RDKx3; exit 2; }
-elif [ $(uname -a | grep -c "raspi") -gt 0 ]; then
-	git checkout raspi || { echo Failed to checkout branch for raspi; exit 2; }
+	{ git checkout rdkx3; dotfiles_dir=${dotfiles_dir}/rdkx3 } || 
+		{ echo Failed to checkout branch for RDKx3; exit 2; }
+elif [ $(uname -a | grep -c "rpi") -gt 0 ]; then
+	{ git checkout raspi; dotfiles_dir=${dotfiles_dir}/raspi }  || 
+		{ echo Failed to checkout branch for raspi; exit 2; }
 else
 	echo Cannot detect system. Please configure dotfiles manually. 
 	exit 2
@@ -124,5 +126,6 @@ for file in $(ls -a ${dotfiles_dir}/config); do
 	fi
 done
 
+git checkout main
 
 echo Auto Configuration Successful!

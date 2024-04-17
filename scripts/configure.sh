@@ -72,7 +72,7 @@ for file in $(ls -a ${dotfiles_dir}/home); do
 	fi
 
 	if [ -f ${abs_path} ]; then
-		ln ${abs_path} ${prefix}/${file}
+		ln -s ${abs_path} ${prefix}/${file}
 		echo "Creating hard link for File ${file}."
 	elif [ -d ${abs_path} ]; then
 		ln -s ${abs_path} ${prefix}/${file}
@@ -115,7 +115,7 @@ for file in $(ls -a ${dotfiles_dir}/config); do
 	fi
 
 	if [ -f ${abs_path} ]; then
-		ln ${abs_path} ${prefix}/.config/${file}
+		ln -s ${abs_path} ${prefix}/.config/${file}
 		echo "Creating hard link for File ${file}."
 	elif [ -d ${abs_path} ]; then
 		ln -s ${abs_path} ${prefix}/.config/${file}

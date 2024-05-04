@@ -6,10 +6,10 @@ dotfiles_dir=${prefix}/dotfiles
 echo Dotfiles Dir: ${dotfiles_dir}
 
 echo Updating software repo
-#sudo apt-get update
+sudo apt-get update
 
 echo Installing git, wget and curl
-#sudo apt-get install git wget curl
+sudo apt-get install git wget curl
 
 # Check SSH configuration
 if [ -f ${prefix}/.ssh/id_rsa.pub ]; then

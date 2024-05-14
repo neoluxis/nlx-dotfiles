@@ -107,3 +107,5 @@ source ~/dotfiles/00_public/zsh/aliases.zsh
 source ~/dotfiles/00_public/zsh/exports.zsh
 
 source /opt/tros/setup.zsh
+alias a='cd ~/dev_ws/shuixia; cam &; detect &; web &;'
+

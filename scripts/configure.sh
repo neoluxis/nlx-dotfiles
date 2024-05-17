@@ -29,7 +29,7 @@ else
 fi
 
 cd ${dotfiles_dir}
-if [ $(uname -a | grep -c "rdkx3") -gt 0 ]; then
+if [ $(cat /etc/version | grep -c "2.1.0") -gt 0 ]; then
 	{ git checkout rdkx3 -- ; dotfiles_dir=${dotfiles_dir}/rdkx3 } || 
 		{ echo Failed to checkout branch for RDKx3; exit 2; }
 elif [ $(uname -a | grep -c "rpi") -gt 0 ]; then

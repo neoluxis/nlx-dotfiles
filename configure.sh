@@ -1,1 +1,1 @@
-/root/dotfiles/scripts/configure.sh
+./scripts/configure.sh
